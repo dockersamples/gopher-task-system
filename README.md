@@ -69,20 +69,4 @@ aba428b48a0c   busybox   "echo 'Hello, Gopher…"   6 minutes ago   Exited (0) 6
 
 ## Sequence Diagram
 
-```sequence
-Task System->Task Runner: Create tasks from YAML
-Note left of Task System: User submits a YAML Task Definition
-Task Runner->Container Manager: Pull Docker image for task
-Container Manager->Docker: Pull Docker image for task
-Task Runner->Container Manager: Create container for task
-Container Manager->Docker: Create container for task
-Docker-->Container Manager: containerID
-Container Manager-->Task Runner: containerID
-Task Runner->Container Manager: Start containerID
-Container Manager->Docker: Start containerID
-Task Runner->Container Manager: Wait for containerID
-Container Manager->Docker: Wait for containerID
-Docker-->Container Manager: Status for containerID
-Container Manager-->Task Runner: Status for containerID
-Task Runner-->Task System: Status of tasks
-```
+![Sequence Diagram](./sequence-diagram.png)
