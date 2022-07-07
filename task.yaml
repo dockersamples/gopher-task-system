@@ -1,0 +1,15 @@
+version: v0.0.1
+tasks:
+  - name: hello-gopher
+    runner: busybox
+    command: ["echo", "Hello, Gopher!"]
+    cleanup: false
+  - name: gopher-loops
+    runner: busybox
+    command:
+      [
+        "sh",
+        "-c",
+        "for i in `seq 0 5`; do echo 'gopher is working'; sleep 1; done",
+      ]
+    cleanup: false
